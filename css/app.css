@@ -1,0 +1,90 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+i {
+    font-family: 'Roboto';
+    margin: 0 auto;
+    padding: 0;
+}
+
+#container {
+    width: 20%;
+    margin: 0 auto;; 
+}
+
+header {
+    flex: 1;
+}
+
+h1 {
+   text-align: center; 
+}
+
+.score-panel {
+    display: flex;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.stars {
+    flex: 1;
+
+}
+
+.moves {
+    float: left;
+    padding-left: 15px;
+
+}
+
+.restart {
+    float: right;
+    padding-right: 15px;
+    
+}
+
+section > ul {
+    display: flex;
+    list-style: none;
+}
+
+.deck {
+    display: flex;
+    max-width: 700px;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    
+}
+
+.card {
+    display:flex;
+    margin-top: 25px;
+    background-color: #333;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+}
+
+.card > i {
+    opacity: 0;
+}
+
+.card-flipped {
+    display:flex;
+    margin-top: 25px;
+    background-color: #999;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+}
+
+.stars li {
+    padding: 0 0 0 10px;
+}
+
