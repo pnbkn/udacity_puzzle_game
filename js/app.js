@@ -56,14 +56,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
         moves[0].textContent = 3 + " Moves";
         init();
     }
-   // Turn Cards     
+   // Turn Cards 
+        
     function turnCard() {
     
         var element = this.getElementsByTagName('i')[0].className;
+        var liSelected = this.getElementsByTagName('li');
         var iconSelected = this.getElementsByTagName('i');
+        
         //this.className += " card-flipped";
-        var toggleClass = this.classList.toggle("card-flipped");
-       
+        this.classList.add('card-flipped');
+       //liSelected[0].classList.toggle("card-flipped");
+        var flipCardBack = this;
         console.log(element);
         
         if (moveCount === 0) {
@@ -80,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
                 if(cardOne === cardTwo) {
                     console.log("You Win");
-                   this.className += " card-flipped";
+                   
                     moves[0].textContent = "Game Over. You Win!";
                         for(var s = 0; s < star.length; s++) {
                         star[s].style.opacity = 0;
@@ -90,18 +94,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
              }
                 else {
                     console.log("Wrong Selection");
-                    //this.className += " card-flipped";
+                    
                     wrongCard;
                     star[2].style.opacity = 0;
                     moves[0].textContent = 2 + " Moves";
                     
                   
                     setTimeout(function(){
-                        
-                        //cardSelected.classList.remove('card-flipped');
-                        //this.classList.remove("card-flipped");
+                        flipCardBack.classList.remove('card-flipped');
                         iconSelected[0].style.opacity = 0; }, 2000);
-                }
+                        
+                    }
     
         }
         
@@ -119,9 +122,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     gameOver();
                 }
                 else {
-    
+                     console.log("Wrong Selection");
                     star[1].style.opacity = 0;
                     moves[0].textContent = 1 + " Move";
+                    
+                    setTimeout(function(){
+                        flipCardBack.classList.remove('card-flipped');
+                        iconSelected[0].style.opacity = 0; }, 2000);
                 }
         }
         else if (moveCount === 3) {
@@ -138,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 else {
                    
                     star[0].style.opacity = 0;
-                    moves[0].textContent = "You Lose";
+                    moves[0].textContent = "You Lose. Try Again!";
                     gameOver();
                 }
          }
