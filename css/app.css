@@ -28,8 +28,9 @@ h1 {
 
 .score-panel {
     display: flex;
-    max-width: 700px;
+    max-width: 680px;
     margin: 0 auto;
+    padding-left: 15px;
 }
 
 .stars {
@@ -37,11 +38,7 @@ h1 {
 
 }
 
-.moves {
-    float: left;
-    padding-left: 15px;
 
-}
 
 .restart {
     float: right;
