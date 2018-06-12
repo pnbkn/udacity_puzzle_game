@@ -50,8 +50,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         //called when game has finished.   
         function gameOver() {
-
-            console.log(this.className);
+            
             if (this.className != "restart") {
                 // Pop up when game is over - https://sweetalert2.github.io/
                 swal({
@@ -63,10 +62,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         text: 'Your Star Rating is: ' + starRating + ' | Number of Moves: ' + moveCounter + " | Time: " + gameTimer[0].textContent,
                     },
                     restartGame()
-
-
+                     
                 );
-
 
             }
             else {
@@ -83,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         //User clicks refresh icon to reset the game to play again  
         function restartGame() {
             // Stop Timer
-            clearTimeout(stopWatch);
+           clearTimeout(stopWatch);
             // Reset Star icons
             for (var s = 0; s < star.length; s++) {
                 star[s].style.opacity = 1;
@@ -94,8 +91,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 card[i].getElementsByTagName('i')[0].style.opacity = 0;
             }
             //Reset number of moves text
+            setTimeout(function() {
+                init();
 
-            init();
+            }, 100);
+            
         }
 
         // Turn Cards     
